@@ -9,6 +9,7 @@ public class DellaCipher {
         String message = input.nextLine().toUpperCase();
         System.out.print("Enter a key: ");
         String key = input.nextLine().toUpperCase();
+        System.out.println();
         
         // Print key above the message for only alphabetic characters
         for (int i = 0; i < message.length(); i++) {
@@ -24,7 +25,7 @@ public class DellaCipher {
         System.out.println(message);
         
         String encryptedMessage = processCipher(message, key);
-        System.out.println("Encrypted message: " + encryptedMessage);
+        System.out.println(encryptedMessage);
     }
 
     // Encrypts the message using the Della Porta cipher method
