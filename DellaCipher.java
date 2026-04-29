@@ -9,7 +9,20 @@ public class DellaCipher {
         String message = input.nextLine().toUpperCase();
         System.out.print("Enter a key: ");
         String key = input.nextLine().toUpperCase();
-
+        
+        // Print key above the message for only alphabetic characters
+        for (int i = 0; i < message.length(); i++) {
+            char messageChar = message.charAt(i);
+            if (Character.isLetter(messageChar)) {
+                char keyChar = key.charAt(i % key.length());
+                System.out.print(keyChar);
+            } else {
+                System.out.print(" "); 
+            }
+        }
+        System.out.println();
+        System.out.println(message);
+        
         String encryptedMessage = processCipher(message, key);
         System.out.println("Encrypted message: " + encryptedMessage);
     }
@@ -41,14 +54,12 @@ public class DellaCipher {
                     result += (char) ('A' + indexInTopRow);
                 }
 
-                // Increment the key index for the next character
                 keyIndex++;
             } else {
                 // Append non-alphabetic characters unchanged
                 result += messageChar;
             }
         }
-
         return result;
     }
 }
