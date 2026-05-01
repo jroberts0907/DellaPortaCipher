@@ -11,14 +11,16 @@ public class DellaCipher {
         String key = input.nextLine().toUpperCase();
         System.out.println();
         
+        int keyIndex = 0;
         // Print key above the message for only alphabetic characters
         for (int i = 0; i < message.length(); i++) {
             char messageChar = message.charAt(i);
             if (Character.isLetter(messageChar)) {
-                char keyChar = key.charAt(i % key.length());
+                char keyChar = key.charAt(keyIndex % key.length());
                 System.out.print(keyChar);
+                keyIndex++;
             } else {
-                System.out.print(" "); 
+                System.out.print(" "); // Print spaces for non-alphabetic characters
             }
         }
         System.out.println();
@@ -54,7 +56,6 @@ public class DellaCipher {
                     int indexInTopRow = (messageChar - 'N' - alphabetIdx + 13) % 13;
                     result += (char) ('A' + indexInTopRow);
                 }
-
                 keyIndex++;
             } else {
                 // Append non-alphabetic characters unchanged
