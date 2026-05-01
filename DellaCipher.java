@@ -1,4 +1,4 @@
-// This is file we will work from just pull n push whenver you need. REMEMBER "Pull before eamCharh time you start working on it."
+// This is file we will work from just pull n push whenver you need. REMEMBER "Pull before each time you start working on it."
 import java.util.Scanner;
 
 public class DellaCipher {
